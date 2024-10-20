@@ -1,0 +1,25 @@
+.entry {
+  padding: var(--vRhythm) 0 calc(var(--vRhythm) - var(--border)) 0;
+  border-bottom: var(--border) solid var(--secondary);
+}
+.entry:first-child {
+  padding: 0 0 calc(var(--vRhythm) - var(--border)) 0;
+}
+
+.entry:last-child {
+  border: none;
+  padding: var(--vRhythm) 0 0 0;
+}
+
+.title {
+  text-decoration: none !important;
+}
+
+.link {
+  text-decoration: none !important;
+}
+
+.selected {
+  text-decoration: none !important;
+  font-weight: bold;
+}

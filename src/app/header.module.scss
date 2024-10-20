@@ -1,0 +1,85 @@
+@import "../../styles/variables.scss";
+
+.root {
+  order: 3;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: calc(var(--vRhythm) * 18);
+  background-color: var(--primary);
+  background-image: url("/images/stephanie-stiernon.jpg");
+  background-size: cover;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+}
+
+.link {
+  height: calc(var(--vRhythm) * 18);
+  width: calc(var(--block) + calc(var(--vRhythm) * 6));
+  background-color: var(--secondary);
+  background-image: url("/images/logo.svg");
+  background-position: center;
+  background-size: calc(var(--block) + calc(var(--vRhythm) * 2)) auto;
+  background-repeat: no-repeat;
+}
+
+.text {
+  display: none;
+}
+
+@media screen and (max-width: $CSS_BREAKPOINT_END_S) {
+  .root {
+    height: calc(var(--vRhythm) * 14);
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+
+  .link {
+    height: calc(var(--vRhythm) * 6);
+    width: calc(var(--block) + calc(var(--vRhythm) * 2));
+    background-color: var(--secondary);
+    background-image: url("/images/logo.svg");
+    background-position: center;
+    background-size: calc(var(--block) - calc(var(--vRhythm) * 2)) auto;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (min-width: $CSS_BREAKPOINT_START_M) and (max-width: $CSS_BREAKPOINT_END_M) {
+  .root {
+    height: calc(var(--vRhythm) * 14);
+  }
+
+  .wrapper {
+    width: calc(calc(var(--block) * 2) + calc(var(--gutter) * 3));
+  }
+
+  .link {
+    height: calc(var(--vRhythm) * 6);
+    width: calc(var(--block) + calc(var(--vRhythm) * 2));
+    background-color: var(--secondary);
+    background-image: url("/images/logo.svg");
+    background-position: center;
+    background-size: calc(var(--block) - calc(var(--vRhythm) * 2)) auto;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (min-width: $CSS_BREAKPOINT_START_L) and (max-width: $CSS_BREAKPOINT_END_L) {
+  .wrapper {
+    width: calc(calc(var(--block) * 3) + calc(var(--gutter) * 4));
+  }
+}
+@media screen and (min-width: $CSS_BREAKPOINT_START_XL) {
+  .wrapper {
+    width: calc(calc(var(--block) * 4) + calc(var(--gutter) * 5));
+  }
+}
+@media print {
+  .root {
+    display: none;
+  }
+}

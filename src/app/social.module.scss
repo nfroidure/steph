@@ -1,0 +1,95 @@
+@import "../../styles/variables.scss";
+
+.root {
+  order: 1;
+  display: flex;
+  justify-content: center;
+  background: var(--primary);
+  height: calc(var(--vRhythm) * 2);
+  padding: 0;
+  margin: 0;
+}
+
+.root ul {
+  display: flex;
+  justify-content: right;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.root li {
+  display: block;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 var(--gutter) 0 0;
+  height: calc(var(--vRhythm) * 2);
+}
+
+.root a {
+  display: block;
+  width: var(--vRhythm);
+  height: calc(var(--vRhythm) * 2);
+  background: var(--light);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: calc(var(--vRhythm) * 1);
+  -webkit-mask-size: calc(var(--vRhythm) * 1);
+  mask-image: url("/images/icons/mastodon.svg");
+}
+
+li.bluesky a {
+  mask-image: url("/images/icons/bluesky.svg");
+}
+
+li.linkedin a {
+  mask-image: url("/images/icons/linkedin.svg");
+}
+
+li.twitter a {
+  mask-image: url("/images/icons/twitter.svg");
+}
+
+li.facebook a {
+  mask-image: url("/images/icons/facebook.svg");
+}
+
+li.feed a {
+  mask-image: url("/images/icons/feed.svg");
+}
+
+.root span {
+  display: none;
+}
+
+@media screen and (max-width: $CSS_BREAKPOINT_END_S) {
+  .root ul {
+    padding: 0 var(--gutter);
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: $CSS_BREAKPOINT_START_M) and (max-width: $CSS_BREAKPOINT_END_M) {
+  .root ul {
+    padding: 0 var(--gutter);
+    width: calc(calc(var(--block) * 2) + calc(var(--gutter) * 3));
+  }
+}
+
+@media screen and (min-width: $CSS_BREAKPOINT_START_L) and (max-width: $CSS_BREAKPOINT_END_L) {
+  .root ul {
+    width: calc(calc(var(--block) * 3) + calc(var(--gutter) * 4));
+  }
+}
+
+@media screen and (min-width: $CSS_BREAKPOINT_START_XL) {
+  .root ul {
+    width: calc(calc(var(--block) * 4) + calc(var(--gutter) * 5));
+  }
+}
+
+@media print {
+  .root {
+    display: none;
+  }
+}
