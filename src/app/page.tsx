@@ -11,8 +11,6 @@ import Heading1 from "../components/h1";
 import Heading2 from "../components/h2";
 import Paragraph from "../components/p";
 import Anchor from "../components/a";
-import UnorderedList from "../components/ul";
-import ListItem from "../components/li";
 import HorizontalRule from "../components/hr";
 import { NodeHtmlMarkdown } from "node-html-markdown";
 import { parseMarkdown, renderMarkdown } from "../utils/markdown";
