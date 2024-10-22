@@ -21,7 +21,7 @@ const htmlToMarkdown = new NodeHtmlMarkdown({});
 export async function generateMetadata() {
   return buildMetadata({
     pathname: "/",
-    title: "Adjointe au maire à l'urbanisme à Douai",
+    title: "Adjointe au maire à l’urbanisme à Douai",
     description:
       "Découvrez le regard de Stéphanie Stiernon élue locale écologiste du Douaisis.",
   });
@@ -66,18 +66,18 @@ export default async function Page() {
         le Douaisis.
       </Paragraph>
       <Paragraph>
-        À Douai, je fais partie de la majorité d'union de la gauche avec les
-        élu-es écologistes. Nous portons notre spécificités et faisons entendre
-        la voir de l'écologie tout en agissant au titre des délégations que nous
+        À Douai, je fais partie de la majorité d’union de la gauche avec les
+        élu·es écologistes. Nous y portons notre spécificité et faisons entendre
+        la voix de l’écologie tout en agissant au titre des délégations que nous
         avons obtenues.
       </Paragraph>
       <Paragraph>
-        À Douaisis Agglo, au sein du groupe Douaisis Écologie Solidarité, nous
-        formons une opposition constructive mais sans concessions à l'unanimisme
+        À Douaisis Agglo, au sein du groupe Douaisis Solidarité Écologie, nous
+        formons une opposition constructive mais sans concessions à l’unanimisme
         ambiant trouvé à notre arrivée.
       </Paragraph>
       <Paragraph>
-        Sur ce site, vous pouvez trouver
+        Sur ce site, vous pouvez trouver{" "}
         <Anchor
           href={`/news/${new Intl.DateTimeFormat("fr-FR", {
             timeZone: "Europe/Paris",
@@ -92,7 +92,7 @@ export default async function Page() {
         </Anchor>{" "}
         avec les articles qui citent mes interventions ou réalisations.
       </Paragraph>
-      <Paragraph>D'autres sections seront ajoutées bientôt&nbsp;!</Paragraph>
+      <Paragraph>D’autres sections seront ajoutées bientôt&nbsp;!</Paragraph>
       <Heading2>Dialoguons&nbsp;!</Heading2>
       <Paragraph>
         N’hésitez pas{" "}
