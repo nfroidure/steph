@@ -39,6 +39,10 @@
     width: 100%;
   }
 
+  .root {
+    background-position: center;
+  }
+
   .link {
     height: calc(var(--vRhythm) * 6);
     width: calc(var(--block) + calc(var(--vRhythm) * 2));
