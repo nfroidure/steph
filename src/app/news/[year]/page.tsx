@@ -29,11 +29,15 @@ export type NewsItem = {
   content: MarkdownRootNode;
 } & NewsItemFrontmatterMetadata;
 
-export async function generateMetadata() {
+export async function generateMetadata({
+  params,
+}: {
+  params: { year: string };
+}) {
   return buildMetadata({
-    pathname: `/news`,
-    title: `La revue de presse`,
-    description: `Recueil des articles citant mes propos ou mon action.`,
+    pathname: `/news/${params.year}`,
+    title: `La revue de presse (année ${params.year})`,
+    description: `Recueil des articles citant mes propos ou mon action pour l'année année ${params.year}.`,
     image: {
       url: "/images/banner.jpg",
       alt: "Bannière de la revue de presse",
