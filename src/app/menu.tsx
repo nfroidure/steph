@@ -17,13 +17,14 @@ const MENU_ITEMS = [
     title: "Revenir à l’accueil",
   },
   {
-    href: `/news/${new Intl.DateTimeFormat("fr-FR", {
-      timeZone: "Europe/Paris",
-      dateStyle: "short",
-    })
-      .format(Date.now())
-      .split("/")
-      .pop()}`,
+    // href: `/news/${new Intl.DateTimeFormat("fr-FR", {
+    //   timeZone: "Europe/Paris",
+    //   dateStyle: "short",
+    // })
+    //   .format(Date.now())
+    //   .split("/")
+    //   .pop()}`,
+    href: '/news/2024',
     label: "Revue de presse",
     title: "Voir ma revue de presse",
   },

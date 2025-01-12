@@ -79,13 +79,16 @@ export default async function Page() {
       <Paragraph>
         Sur ce site, vous pouvez trouver{" "}
         <Anchor
-          href={`/news/${new Intl.DateTimeFormat("fr-FR", {
-            timeZone: "Europe/Paris",
-            dateStyle: "short",
-          })
-            .format(Date.now())
-            .split("/")
-            .pop()}`}
+          href={
+            "/news/2024"
+            //   `/news/${new Intl.DateTimeFormat("fr-FR", {
+            //   timeZone: "Europe/Paris",
+            //   dateStyle: "short",
+            // })
+            //   .format(Date.now())
+            //   .split("/")
+            //   .pop()}`
+          }
           title="Voir ma revue de presse"
         >
           une revue de presse
