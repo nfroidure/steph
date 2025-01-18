@@ -1,8 +1,11 @@
 import styles from "./page.module.scss";
 import {
+  BUILD_YEAR,
+  LOCALE,
   MASTODON_ACCOUNT_ID,
   MASTODON_SERVER,
   ORGANISATION_CONTACT,
+  TIME_ZONE,
 } from "../utils/constants";
 import buildMetadata from "../utils/metadata";
 import { Fragment } from "react";
@@ -78,19 +81,7 @@ export default async function Page() {
       </Paragraph>
       <Paragraph>
         Sur ce site, vous pouvez trouver{" "}
-        <Anchor
-          href={
-            "/news/2024"
-            //   `/news/${new Intl.DateTimeFormat("fr-FR", {
-            //   timeZone: "Europe/Paris",
-            //   dateStyle: "short",
-            // })
-            //   .format(Date.now())
-            //   .split("/")
-            //   .pop()}`
-          }
-          title="Voir ma revue de presse"
-        >
+        <Anchor href={`/news/${BUILD_YEAR}`} title="Voir ma revue de presse">
           une revue de presse
         </Anchor>{" "}
         avec les articles qui citent mes interventions ou réalisations.
@@ -120,8 +111,8 @@ export default async function Page() {
                 href={toot.url as string}
                 title="Voir le toot sur Mastodon"
               >
-                {new Intl.DateTimeFormat("fr-FR", {
-                  timeZone: "Europe/Paris",
+                {new Intl.DateTimeFormat(LOCALE, {
+                  timeZone: TIME_ZONE,
                   dateStyle: "full",
                   timeStyle: "medium",
                 }).format(Date.parse(toot.createdAt))}

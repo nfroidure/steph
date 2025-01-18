@@ -8,7 +8,7 @@ import Heading2 from "../components/h2";
 import Paragraph from "../components/p";
 import Popin from "../components/popin";
 import Button from "../components/button";
-import { ORGANISATION_CONTACT } from "../utils/constants";
+import { BUILD_YEAR, ORGANISATION_CONTACT } from "../utils/constants";
 
 const MENU_ITEMS = [
   {
@@ -17,14 +17,7 @@ const MENU_ITEMS = [
     title: "Revenir à l’accueil",
   },
   {
-    // href: `/news/${new Intl.DateTimeFormat("fr-FR", {
-    //   timeZone: "Europe/Paris",
-    //   dateStyle: "short",
-    // })
-    //   .format(Date.now())
-    //   .split("/")
-    //   .pop()}`,
-    href: '/news/2024',
+    href: `/news/${BUILD_YEAR}`,
     label: "Revue de presse",
     title: "Voir ma revue de presse",
   },

@@ -16,6 +16,7 @@ import Heading3 from "../../../components/h3";
 import Strong from "../../../components/strong";
 import type { MarkdownRootNode } from "../../../utils/markdown";
 import type { FrontMatterResult } from "front-matter";
+import { BUILD_YEAR, LOCALE, TIME_ZONE } from "../../../utils/constants";
 
 export type NewsItemFrontmatterMetadata = {
   title: string;
@@ -80,41 +81,48 @@ export default async function Page({ params }: { params: { year: string } }) {
         ))}
       </Paragraph>
       <Heading2>En {params.year}</Heading2>
-      <div>
-        {entries.map((entry) => (
-          <div key={entry.id} className={styles.entry}>
-            <Heading3 className={styles.title}>
-              <Anchor
-                href={entry.url}
-                title={`Lire le contenu de ${entry.publication}`}
-                className={styles.link}
-              >
-                {fixText(entry.title)}
-              </Anchor>
-            </Heading3>
-            <Paragraph>
-              Publié le{" "}
-              {new Intl.DateTimeFormat("fr-FR", {
-                timeZone: "Europe/Paris",
-                dateStyle: "full",
-                timeStyle: "medium",
-              }).format(Date.parse(entry.date))}{" "}
-              par <Strong>{entry.publication}</Strong>.
-            </Paragraph>
-            {renderMarkdown({ index: 0 }, entry.content)}
-            <Paragraph>
-              <Anchor
-                href={entry.url}
-                title={`Lire le contenu de ${entry.publication}`}
-                icon="arrow-right"
-                iconPosition="last"
-              >
-                Lire l'article
-              </Anchor>
-            </Paragraph>
-          </div>
-        ))}
-      </div>
+      {entries.length ? (
+        <div>
+          {entries.map((entry) => (
+            <div key={entry.id} className={styles.entry}>
+              <Heading3 className={styles.title}>
+                <Anchor
+                  href={entry.url}
+                  title={`Lire le contenu de ${entry.publication}`}
+                  className={styles.link}
+                >
+                  {fixText(entry.title)}
+                </Anchor>
+              </Heading3>
+              <Paragraph>
+                Publié le{" "}
+                {new Intl.DateTimeFormat(LOCALE, {
+                  timeZone: TIME_ZONE,
+                  dateStyle: "full",
+                  timeStyle: "medium",
+                }).format(Date.parse(entry.date))}{" "}
+                par <Strong>{entry.publication}</Strong>.
+              </Paragraph>
+              {renderMarkdown({ index: 0 }, entry.content)}
+              <Paragraph>
+                <Anchor
+                  href={entry.url}
+                  title={`Lire le contenu de ${entry.publication}`}
+                  icon="arrow-right"
+                  iconPosition="last"
+                >
+                  Lire l'article
+                </Anchor>
+              </Paragraph>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p>
+          Aucun article en {params.year} à ce jour, revenez plus tard ou
+          consultez les autres années.
+        </p>
+      )}
     </ContentBlock>
   );
 }
@@ -132,9 +140,14 @@ function getYearsFromEntries(
 ) {
   return [
     ...new Set(
-      entries.map((entry) =>
-        new Date(entry.attributes.date).getFullYear().toString()
-      )
+      entries
+        .map((entry) =>
+          new Intl.DateTimeFormat("fr-FR", {
+            timeZone: "Europe/Paris",
+            year: "numeric",
+          }).format(new Date(entry.attributes.date))
+        )
+        .concat(BUILD_YEAR.toString(10))
     ).values(),
   ]
     .sort()

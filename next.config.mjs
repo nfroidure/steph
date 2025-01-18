@@ -12,6 +12,13 @@ const config = {
   reactStrictMode: true,
   assetPrefix,
   basePath,
+  env: {
+    // Avoid dynamic years
+    BUILD_YEAR: new Intl.DateTimeFormat("fr-FR", {
+      timeZone: "Europe/Paris",
+      year: "numeric",
+    }).format(),
+  }
 };
 
 export default config;
