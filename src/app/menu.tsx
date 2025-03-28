@@ -17,6 +17,11 @@ const MENU_ITEMS = [
     title: "Revenir à l’accueil",
   },
   {
+    href: `/blog`,
+    label: "Blog",
+    title: "Lire mes articles de blog",
+  },
+  {
     href: `/news/${BUILD_YEAR}`,
     label: "Revue de presse",
     title: "Voir ma revue de presse",

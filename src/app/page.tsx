@@ -85,8 +85,14 @@ export default async function Page() {
           une revue de presse
         </Anchor>{" "}
         avec les articles qui citent mes interventions ou réalisations.
+      </Paragraph>{" "}
+      <Paragraph>
+        Vous pouvez également y lire mes{" "}
+        <Anchor href={`/blog`} title="Lire mon blog">
+          articles de blog
+        </Anchor>
+        .
       </Paragraph>
-      <Paragraph>D’autres sections seront ajoutées bientôt&nbsp;!</Paragraph>
       <Heading2>Dialoguons&nbsp;!</Heading2>
       <Paragraph>
         N’hésitez pas{" "}
