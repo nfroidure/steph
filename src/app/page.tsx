@@ -40,7 +40,7 @@ export default async function Page() {
         }),
         mode: "cors",
         cache: "default",
-      }
+      },
     )
   ).json()) as Status[];
   const toots = body
@@ -48,7 +48,7 @@ export default async function Page() {
     .filter((toot) => toot.content)
     .map((toot) => {
       const text = parseMarkdown(
-        htmlToMarkdown.translate(toot.content)
+        htmlToMarkdown.translate(toot.content),
       ) as MarkdownRootNode;
 
       return {

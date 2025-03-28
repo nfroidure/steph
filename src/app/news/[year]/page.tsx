@@ -30,11 +30,11 @@ export type NewsItem = {
   content: MarkdownRootNode;
 } & NewsItemFrontmatterMetadata;
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { year: string };
+export async function generateMetadata(props: {
+  params: Promise<{ year: string }>;
 }) {
+  const params = await props.params;
+
   return buildMetadata({
     pathname: `/news/${params.year}`,
     title: `La revue de presse (année ${params.year})`,
@@ -46,9 +46,12 @@ export async function generateMetadata({
   });
 }
 
-export default async function Page({ params }: { params: { year: string } }) {
+export default async function Page(props: {
+  params: Promise<{ year: string }>;
+}) {
+  const params = await props.params;
   const baseEntries = await readEntries<NewsItemFrontmatterMetadata>(
-    pathJoin(".", "contents", "news")
+    pathJoin(".", "contents", "news"),
   );
   const years = getYearsFromEntries(baseEntries);
   const entries = baseEntries
@@ -59,7 +62,7 @@ export default async function Page({ params }: { params: { year: string } }) {
     }))
     .filter((entry) => !entry.draft || process.env.NODE_ENV === "development")
     .filter(
-      (entry) => params.year === new Date(entry.date).getFullYear().toString()
+      (entry) => params.year === new Date(entry.date).getFullYear().toString(),
     )
     .sort(datedPagesSorter);
 
@@ -111,7 +114,7 @@ export default async function Page({ params }: { params: { year: string } }) {
                   icon="arrow-right"
                   iconPosition="last"
                 >
-                  Lire l'article
+                  Lire l’article
                 </Anchor>
               </Paragraph>
             </div>
@@ -130,13 +133,13 @@ export default async function Page({ params }: { params: { year: string } }) {
 export async function generateStaticParams() {
   return getYearsFromEntries(
     await readEntries<NewsItemFrontmatterMetadata>(
-      pathJoin(".", "contents", "news")
-    )
+      pathJoin(".", "contents", "news"),
+    ),
   ).map((year) => ({ year: year }));
 }
 
 function getYearsFromEntries(
-  entries: FrontMatterResult<NewsItemFrontmatterMetadata>[]
+  entries: FrontMatterResult<NewsItemFrontmatterMetadata>[],
 ) {
   return [
     ...new Set(
@@ -145,9 +148,9 @@ function getYearsFromEntries(
           new Intl.DateTimeFormat("fr-FR", {
             timeZone: "Europe/Paris",
             year: "numeric",
-          }).format(new Date(entry.attributes.date))
+          }).format(new Date(entry.attributes.date)),
         )
-        .concat(BUILD_YEAR.toString(10))
+        .concat(BUILD_YEAR.toString(10)),
     ).values(),
   ]
     .sort()

@@ -1,17 +1,19 @@
-/** @type {import('next').NextConfig} */
+import type { NextConfig } from "next";
 
-
+const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-// Internal NextJS assets
-const assetPrefix = process.env.NEXT_PUBLIC_ASSET_PREFIX;
-
-const config = {
+const assetPrefix = `${baseURL}${basePath}`;
+const allowedDevOrigins = baseURL
+  ? [baseURL.replace(/^https?:\/\/(.*)(:[0-9]+)$/, "$1")]
+  : [];
+const nextConfig: NextConfig = {
   output: 'export',
   trailingSlash: false,
   distDir: 'out',
   reactStrictMode: true,
   assetPrefix,
   basePath,
+  allowedDevOrigins,
   env: {
     // Avoid dynamic years
     BUILD_YEAR: new Intl.DateTimeFormat("fr-FR", {
@@ -21,4 +23,4 @@ const config = {
   }
 };
 
-export default config;
+export default nextConfig;

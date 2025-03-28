@@ -1,5 +1,3 @@
-@import "../../styles/variables.scss";
-
 span.icon {
   display: inline-block;
   height: var(--vRhythm);
@@ -9,10 +7,12 @@ span.icon {
   mask-size: calc(var(--vRhythm) * 0.6);
   -webkit-mask-size: calc(var(--vRhythm) * 0.6);
   mask-position: left bottom;
-  mask-image: url("/images/icons/twitter.svg");
 }
 span.icon.facebook {
   mask-image: url("/images/icons/facebook.svg");
+}
+span.icon.bluesky {
+  mask-image: url("/images/icons/bluesky.svg");
 }
 span.icon.mail {
   mask-image: url("/images/icons/mail.svg");

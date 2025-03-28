@@ -16,7 +16,6 @@ export const DOMAIN_NAME = "stephaniestiernon.fr";
 export const MASTODON_ACCOUNT = "stephanie_stiernon";
 export const MASTODON_ACCOUNT_ID = "112473414045703174";
 export const MASTODON_SERVER = "piaille.fr";
-export const TWITTER_ACCOUNT = "sstiernon";
 export const FACEBOOK_ACCOUNT = "stephanie.stiernon.1";
 export const LINKEDIN_ACCOUNT = "stephanie-stiernon";
 export const BLUESKY_ACCOUNT = "";

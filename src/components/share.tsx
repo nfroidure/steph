@@ -1,23 +1,17 @@
 import styles from "./share.module.scss";
-import { ORGANISATION_CONTACT, TWITTER_ACCOUNT } from "../utils/constants";
+import { ORGANISATION_CONTACT } from "../utils/constants";
 import Paragraph from "./p";
 import Anchor from "./a";
 import Heading2 from "./h2";
 
-export default function Share({
-  url,
-  title,
-}: {
-  url: string;
-  title: string;
-}): JSX.Element {
+export default function Share({ url, title }: { url: string; title: string }) {
   return (
     <aside className={styles.root}>
       <Heading2>Commenter et partager</Heading2>
       <Paragraph>
         <Anchor
           href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-            url
+            url,
           )}&t=${encodeURIComponent(title)}`}
           title="Commenter sur Facebook"
           target="_blank"
@@ -27,14 +21,12 @@ export default function Share({
         </Anchor>
         {" - "}
         <Anchor
-          href={`https://twitter.com/intent/tweet/?url=${encodeURIComponent(
-            url
-          )}&text=${encodeURIComponent(title)}&via=${TWITTER_ACCOUNT}`}
-          title="Commenter sur Twitter"
+          href={`https://bsky.app/intent/compose?text=${encodeURIComponent(title)}`}
+          title="Commenter sur Bluesky"
           target="_blank"
         >
-          <span className={[styles.icon, styles.twitter].join(" ")} />
-          Twitter
+          <span className={[styles.icon, styles.bluesky].join(" ")} />
+          Bluesky
         </Anchor>
         {" - "}
         <Anchor
