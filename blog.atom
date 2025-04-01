@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom">    
+  <id>https://stephaniestiernon.fr/blog</id>
+  <title>Blog - Stéphanie Stiernon - Stéphanie Stiernon</title>
+  <subtitle>Retrouvez ici les sujets que je souhaite développer ou mettre plus particulièrement en valeur.</subtitle>
+  <link href="https://stephaniestiernon.fr/blog.atom" rel="self" type="application/atom+xml" />
+  <link href="https://stephaniestiernon.fr/blog" rel="alternate" type="text/html" />
+  <updated>2025-03-28T18:00:00.000Z</updated>
+  <entry>
+    <id>https://stephaniestiernon.fr/blog/rapport-developpement-durable-de-douaisis-agglo-2024</id>
+    <title>Rapport développement durable de Douaisis Agglo 2024</title>
+    <link href="https://stephaniestiernon.fr/blog/rapport-developpement-durable-de-douaisis-agglo-2024" rel="alternate" type="text/html" />
+    <updated>2025-03-28T18:00:00.000Z</updated>
+    <published>2025-03-28T18:00:00.000Z</published>
+    <summary>Retrouvez, ici, mon intervention sur le rapport développement durable de Douaisis Agglo pour l’année 2024.</summary>
+    <author>
+      <name>Stéphanie Stiernon</name>
+    </author>
+  </entry>
+</feed>
