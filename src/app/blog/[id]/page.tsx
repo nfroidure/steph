@@ -1,4 +1,4 @@
-import { DOMAIN_NAME } from "../../../utils/constants";
+import { DOMAIN_NAME, LOCALE, TIME_ZONE } from "../../../utils/constants";
 import styles from "./page.module.scss";
 import { fixText } from "../../../utils/text";
 import { qualifyPath, renderMarkdown } from "../../../utils/markdown";
@@ -87,8 +87,8 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
       {renderMarkdown({ index: 0 }, entry.content)}
       <Paragraph>
         Publié le{" "}
-        {new Intl.DateTimeFormat("fr-FR", {
-          timeZone: "Europe/Paris",
+        {new Intl.DateTimeFormat(LOCALE, {
+          timeZone: TIME_ZONE,
           dateStyle: "full",
           timeStyle: "medium",
         }).format(Date.parse(entry.date))}

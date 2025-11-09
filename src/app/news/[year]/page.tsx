@@ -145,8 +145,8 @@ function getYearsFromEntries(
     ...new Set(
       entries
         .map((entry) =>
-          new Intl.DateTimeFormat("fr-FR", {
-            timeZone: "Europe/Paris",
+          new Intl.DateTimeFormat(LOCALE, {
+            timeZone: TIME_ZONE,
             year: "numeric",
           }).format(new Date(entry.attributes.date)),
         )

@@ -1,6 +1,7 @@
 {
   "name": "stephaniestiernon",
   "version": "1.0.0",
+  "private": true,
   "license": "SEE LICENSE.md",
   "scripts": {
     "dev": "next",
@@ -13,29 +14,28 @@
   },
   "dependencies": {
     "front-matter": "^4.0.2",
-    "glob": "^11.0.1",
+    "glob": "^11.0.3",
     "inline-style-prefixer": "^7.0.1",
-    "next": "15.2.4",
+    "next": "^16.0.1",
     "node-html-markdown": "^1.3.0",
-    "prettier": "^3.5.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "remark-parse": "^11.0.0",
-    "sass": "^1.86.0",
-    "server-only": "0.0.1",
+    "sass": "^1.93.3",
     "unified": "11.0.5",
-    "yaml": "2.7.0",
+    "yaml": "2.8.1",
     "yerror": "^8.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/inline-style-prefixer": "^5.0.3",
-    "@types/node": "^20",
+    "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.2.4",
-    "tsx": "^4.7.0",
+    "eslint-config-next": "16.0.1",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.6",
     "typescript": "^5"
   }
 }

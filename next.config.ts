@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
+import { LOCALE, TIME_ZONE } from "@/utils/constants";
+import { type NextConfig } from "next";
+import { env } from "node:process";
 
-const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const baseURL = env.NEXT_PUBLIC_BASE_URL;
+const basePath = env.NEXT_PUBLIC_BASE_PATH || '';
 const assetPrefix = `${baseURL}${basePath}`;
 const allowedDevOrigins = baseURL
   ? [baseURL.replace(/^https?:\/\/(.*)(:[0-9]+)$/, "$1")]
@@ -16,8 +18,8 @@ const nextConfig: NextConfig = {
   allowedDevOrigins,
   env: {
     // Avoid dynamic years
-    BUILD_YEAR: new Intl.DateTimeFormat("fr-FR", {
-      timeZone: "Europe/Paris",
+    BUILD_YEAR: new Intl.DateTimeFormat(LOCALE, {
+      timeZone: TIME_ZONE,
       year: "numeric",
     }).format(),
   }

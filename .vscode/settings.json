@@ -1,4 +1,6 @@
 {
-    "cSpell.enabled": true,
-    "cSpell.language": "fr"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "cSpell.enabled": true,
+  "cSpell.language": "en,fr",
 }
