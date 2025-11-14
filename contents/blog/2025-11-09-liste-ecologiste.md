@@ -32,7 +32,7 @@ L’option de l’autonomie a le mérite de permettre à celles et ceux qui le s
 
 Pour cela, n’oubliez pas de vous [inscrire sur les listes électorales](https://www.service-public.gouv.fr/particuliers/vosdroits/R16396) auprès de la mairie avant le mercredi 4 Février 2026 sur Internet.
 
-**Si vous avez envie de rejoindre notre dynamique** écologiste et citoyenne, de participer à l’amélioration du programme, de nous aider à en faire un succès, [contactez-moi](maito:stiernon_stephanie@yahoo.fr).
+**Si vous avez envie de rejoindre notre dynamique** écologiste et citoyenne, de participer à l’amélioration du programme, de nous aider à en faire un succès, [contactez-moi](mailto:stiernon_stephanie@yahoo.fr).
 
 Vous pouvez également [retrouver notre programme](https://eelv-douaisis.fr/actualite/municipales-2026-notre-programme-pour-douai) sur le site des écologistes.
 
