@@ -1,4 +1,4 @@
 1:"$Sreact.fragment"
 2:I[39756,["https://stephaniestiernon.fr/_next/static/chunks/8ee22c0977967064.js","https://stephaniestiernon.fr/_next/static/chunks/2fdd8267dca97db1.js"],"default"]
 3:I[37457,["https://stephaniestiernon.fr/_next/static/chunks/8ee22c0977967064.js","https://stephaniestiernon.fr/_next/static/chunks/2fdd8267dca97db1.js"],"default"]
-0:{"buildId":"g1kjECBXO9F2ncZPR4FVS","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"5hd54xMSixpsZYEn0blXr","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
