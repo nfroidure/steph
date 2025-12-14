@@ -5,8 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: end;
-  height: calc(var(--vRhythm) * 18);
+  height: calc(var(--vRhythm) * 16);
   background-color: var(--primary);
+  background-position: left 30%;
   background-image: url("/images/stephanie-stiernon.jpg");
   background-size: cover;
 }
@@ -17,7 +18,7 @@
 }
 
 .link {
-  height: calc(var(--vRhythm) * 18);
+  height: calc(var(--vRhythm) * 16);
   width: calc(var(--block) + calc(var(--vRhythm) * 6));
   background-color: var(--secondary);
   background-image: url("/images/logo.svg");

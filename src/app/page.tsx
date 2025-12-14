@@ -18,6 +18,7 @@ import HorizontalRule from "../components/hr";
 import { NodeHtmlMarkdown } from "node-html-markdown";
 import { parseMarkdown, renderMarkdown } from "../utils/markdown";
 import type { MarkdownRootNode } from "../utils/markdown";
+import Button from "@/components/button";
 
 const htmlToMarkdown = new NodeHtmlMarkdown({});
 
@@ -40,7 +41,7 @@ export default async function Page() {
         }),
         mode: "cors",
         cache: "default",
-      },
+      }
     )
   ).json()) as Status[];
   const toots = body
@@ -48,7 +49,7 @@ export default async function Page() {
     .filter((toot) => toot.content)
     .map((toot) => {
       const text = parseMarkdown(
-        htmlToMarkdown.translate(toot.content),
+        htmlToMarkdown.translate(toot.content)
       ) as MarkdownRootNode;
 
       return {
@@ -62,22 +63,44 @@ export default async function Page() {
 
   return (
     <ContentBlock>
-      <Heading1>Bienvenue</Heading1>
+      <div className={styles.douai_collectif}>
+        <Heading2>
+          <img
+            src="https://douai-collectif.fr/images/header.svg"
+            alt="Logo Douai Collectif !"
+          />
+          Découvrez Douai Collectif
+        </Heading2>
+        <Paragraph>
+          Les prochaines municipales auront lieu en mars 2026. À Douai, nous
+          avons constitué un groupe composé d'élu·es, militant·es et citoyen·nes
+          concerné·es par la justice sociale et climatique. Ce groupe, c'est
+          Douai Collectif&nbsp;! pour une ville citoyenne, écologique et
+          solidaire.
+        </Paragraph>
+        <Paragraph className={styles.douai_collectif_p}>
+          <Button
+            type="link"
+            href={"https://douai-collectif.fr"}
+            label="Rejoignez-nous !"
+            title="Suivez les municipales 2026 à Douai"
+          />
+        </Paragraph>
+      </div>
+      <Heading2>Qui suis-je&nbsp;?</Heading2>
       <Paragraph>
-        Élue locale (adjointe au maire à l’urbanisme à Douai et conseillère
-        communautaire à Douaisis Agglo), je partage ici mon action pour Douai et
-        le Douaisis.
+        Élue locale (ex adjointe au maire à l’urbanisme, conseillère
+        municipale à Douai et conseillère communautaire à Douaisis Agglo), je
+        partage ici mon action pour Douai et le Douaisis.
       </Paragraph>
       <Paragraph>
-        À Douai, je fais partie de la majorité d’union de la gauche avec les
-        élu·es écologistes. Nous y portons notre spécificité et faisons entendre
-        la voix de l’écologie tout en agissant au titre des délégations que nous
-        avons obtenues.
+        À Douai, je fais partie de l’opposition avec mes collègues élu·es
+        écologistes. Nous y portons notre spécificité et faisons entendre la
+        voix de l’écologie.
       </Paragraph>
       <Paragraph>
-        À Douaisis Agglo, au sein du groupe Douaisis Solidarité Écologie, nous
-        formons une opposition constructive mais sans concessions à l’unanimisme
-        ambiant trouvé à notre arrivée.
+        À Douaisis Agglo, nous formons une opposition constructive mais sans
+        concessions à l’unanimisme ambiant trouvé à notre arrivée.
       </Paragraph>
       <Paragraph>
         Sur ce site, vous pouvez trouver{" "}
