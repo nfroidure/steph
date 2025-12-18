@@ -10,7 +10,6 @@ import {
 import buildMetadata from "../utils/metadata";
 import { Fragment } from "react";
 import ContentBlock from "../components/contentBlock";
-import Heading1 from "../components/h1";
 import Heading2 from "../components/h2";
 import Paragraph from "../components/p";
 import Anchor from "../components/a";
@@ -19,10 +18,11 @@ import { NodeHtmlMarkdown } from "node-html-markdown";
 import { parseMarkdown, renderMarkdown } from "../utils/markdown";
 import type { MarkdownRootNode } from "../utils/markdown";
 import Button from "@/components/button";
+import { Metadata } from "next";
 
 const htmlToMarkdown = new NodeHtmlMarkdown({});
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({
     pathname: "/",
     title: "Adjointe au maire à l’urbanisme à Douai",
@@ -64,7 +64,7 @@ export default async function Page() {
   return (
     <ContentBlock>
       <div className={styles.douai_collectif}>
-        <Heading2>
+        <Heading2 className={styles.douai_collectif_h2}>
           <img
             src="https://douai-collectif.fr/images/header.svg"
             alt="Logo Douai Collectif !"
@@ -89,9 +89,9 @@ export default async function Page() {
       </div>
       <Heading2>Qui suis-je&nbsp;?</Heading2>
       <Paragraph>
-        Élue locale (ex adjointe au maire à l’urbanisme, conseillère
-        municipale à Douai et conseillère communautaire à Douaisis Agglo), je
-        partage ici mon action pour Douai et le Douaisis.
+        Élue locale (ex adjointe au maire à l’urbanisme, conseillère municipale
+        à Douai et conseillère communautaire à Douaisis Agglo), je partage ici
+        mon action pour Douai et le Douaisis.
       </Paragraph>
       <Paragraph>
         À Douai, je fais partie de l’opposition avec mes collègues élu·es
