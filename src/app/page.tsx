@@ -25,9 +25,9 @@ const htmlToMarkdown = new NodeHtmlMarkdown({});
 export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({
     pathname: "/",
-    title: "Adjointe au maire à l’urbanisme à Douai",
+    title: "Candidate aux élections municipales 2026 à Douai",
     description:
-      "Découvrez le regard de Stéphanie Stiernon élue locale écologiste du Douaisis.",
+      "Découvrez le regard de Stéphanie Stiernon élue locale écologiste du Douaisis et tête de liste de Douai Collectif.",
   });
 }
 
